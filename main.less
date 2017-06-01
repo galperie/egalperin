@@ -1,11 +1,36 @@
+html {
+  height: 100%;
+}
+
 body{
   font-family: "Helvetica";
   background: #4CD2D5;
   color: #444;
+
+  min-height: 100%;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   margin: 0;
+
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+section {
+  width: 50%;
+  flex: 1 0 auto;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+}
+
+footer img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 h1{
@@ -19,16 +44,6 @@ h3 {
   font-weight: 300;
 }
 
-.center{
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  text-align: center;
-  padding: 50px 20px 0;
-  flex: 1;
-}
-
 .credits {
     font-size: 10px;
 }
@@ -37,19 +52,4 @@ h3 {
   width: 50px;
   height: 50px;
   padding: 10px;
-}
-
-footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  margin: 0;
-}
-
-footer img {
-  width: 100%;
-  height: 100%;
 }
