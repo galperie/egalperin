@@ -3,7 +3,7 @@ html {
 }
 
 body{
-  font-family: "Helvetica";
+  font-family: "Century Gothic","CenturyGothic","AppleGothic","sans-serif";
   background: #4CD2D5;//#900C3F;
   color: #EAEAEA;
 
@@ -25,6 +25,7 @@ section {
   width: 50%;
   flex: 1 0 auto;
   text-align: center;
+  height: 100vh;
 }
 
 footer {
@@ -37,10 +38,16 @@ footer img {
   display: block;
 }
 
-h1{
-  font-size: 65px;
+header {
+  font-size: 150px;
   padding: 20px 0;
   color: #fff ;
+  text-align: left;
+}
+
+.subHeader {
+  font-size: 60px;
+  text-align: right;
 }
 
 h3 {
@@ -55,4 +62,51 @@ h3 {
   width: 50px;
   height: 50px;
   padding: 10px;
+}
+
+
+//// LINKS
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+
+.nextSectionLink {
+	bottom: 15%;
+	left: 50%;
+	z-index: 2;
+	display: inline-block;
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	color: #fff;
+	font : normal 400 20px/1 'Josefin Sans', sans-serif;
+	letter-spacing: .1em;
+	text-decoration: none;
+	transition: opacity .3s;
+}
+.nextSectionLink:hover {
+	opacity: .5;
+}
+
+.nextSectionLink span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 46px;
+	height: 46px;
+	margin-left: -23px;
+	border: 5px solid #fff;
+	border-radius: 100%;
+	box-sizing: border-box;
+}
+.nextSectionLink span::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	content: '';
+	width: 16px;
+	height: 16px;
+	margin: -12px 0 0 -8px;
+	border-left: 5px solid #fff;
+	border-bottom: 5px solid #fff;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	box-sizing: border-box;
 }
