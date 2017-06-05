@@ -1,0 +1,64 @@
+
+/* Let's make the typography beautiful :D */
+.tooltip {
+	color: white;
+	text-decoration: none;
+	font: 14px Arial, sans-serif;
+	margin: 180px auto;
+	position: relative;
+}
+
+/* Let's start making the tooltip now */
+/* We'll use the pseudo elements for the tooltip's body (:before for the arrow) while taking the content from data-content attribute using the "content" property. */
+/* Also, we'll make the tooltip resizable so it will adjust automatically according to the text inside it */
+
+.tooltip:after {
+	content: attr(data-content);
+	position: absolute;
+	left: 0;
+	width: 50px;
+	font-size: 12px;
+	transition: all 0.3s ease;
+
+	/* centering the tooltip */
+	left: 50%;
+	bottom: 30px;
+	padding: 10px;
+
+	/* Styling the tooltip using CSS3 */
+	border-radius: 5px;
+	background: #0d6f8a;
+	background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* For the arrow, I will not use the border hack because we can't style the arrow created that way. So, I'll simply use a square and rotate it 45deg which will make a nice triangle. We can then put it on top of the main background and style it accordingly. */
+.tooltip:before {
+	content: '';
+	position: absolute;
+
+	/* Same background and stuff */
+	background: #0d6f8a;
+	width: 8px;
+	height: 8px;
+	transform: rotate(45deg);
+	bottom: 26px;
+	z-index: 1;
+	left: 50%;
+	margin-left: 30px;
+	transition: all 0.3s ease;
+
+	/* Now, we'll make it blend into the bg */
+	background-image: linear-gradient(-45deg, rgba(0,0,0,0.27), rgba(0,0,0,0.3)); /* Perfect! */
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* That's it! We can now add any text to the data-content attribute, no matter how long it is */
+
+
+// .tooltip:before, .tooltip:after {opacity: 0; visibility: hidden;}
+// .tooltip:hover::before, .tooltip:hover::after {opacity: 1; visibility: visible;}
+
+
+/* Try hovering it now and you'll see it appear with a nice animation! */
+/* Thanks for watching this codecast. Now you can put any link with data-content attribute and the tooltip will appear on all of them. */

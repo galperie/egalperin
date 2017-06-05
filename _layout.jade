@@ -1,6 +1,11 @@
 doctype
 html
   head
-    link(rel="stylesheet" href="/main.css")
+    link(rel="stylesheet" href="style/main.css")
+    link(rel="stylesheet" href="style/tooltip.css")
+    
   body
     != yield
+    
+    script(src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js")
+    script(src="/main.js")
