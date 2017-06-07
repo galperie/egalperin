@@ -24,4 +24,15 @@ $(function() {
        ).offset().top
      }, 500, 'linear');
 	});
+
+  $('button.hamburger').on('click', function(e) {
+    e.preventDefault();
+
+    var classString = $(this).prop('className');
+    if(classString.indexOf("is-active") !== -1) {
+      $(this).removeClass("is-active");
+    } else {
+      $(this).addClass("is-active");
+    }
+  });
 });
