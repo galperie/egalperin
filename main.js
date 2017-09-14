@@ -1,17 +1,28 @@
+$(function(){
+  console.log(`%c _____________________________
+< welcome to my site - Ellen >
+------------------------------
+       \\   ^__^
+        \\  (oo)\\_______
+           (__)\\       )\\/\\
+               ||----w |
+               ||     ||`, "font-family:monospace")
+});
+
+
 var clipboard = new Clipboard('.btn');
 
-
 clipboard.on('success', function(e) {
-    var tooltip = document.getElementById("copied");
-    // console.log(tooltip);
-    tooltip.style.display = '';
-    console.log(`Success! Copied: ${e}`);
+    var copiedMessage = document.getElementById("copied");
+    setTimeout(function(){
+      copiedMessage.innerHTML = "";
+    }, 1000);
+    copiedMessage.innerHTML = "Copied!";
 });
 
 clipboard.on('error', function(e) {
-    var tooltip = document.getElementById("copied");
-    tooltip.style.display = 'none';
-    console.log(`Yikes, ${e}`);
+    document.getElementById("copied").innerHTML = "";
+    console.log(`Yikes, looks like something went wrong while trying to get my email. It's 11galpel@gmail.com, if you're curious`);
 });
 
 
