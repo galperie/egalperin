@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MAKE A DECISION!!</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	</head>
+
+	<body style="padding: 0 50px 50px 50px;">
+
+
+	<div class="container">
+ 	  <div class="row">
+
+
+		<h1>NEED HELP MAKING A DECISION? ME TOO</h1>
+		<br>
+
+		<h3>What do you gotta do?</h3>
+
+		<ul id="theList">
+
+		</ul>
+
+		<button type="button" class="btn btn-danger"  onclick="pick();">WHAT SHOULD I DO??</button>
+
+		</br>
+		</br>
+		</br>
+
+
+
+
+		<form>
+			<div class="form-group">
+				<textarea class="form-control" rows="3" name="thing" id="thing" placeholder="I gotta do this"></textarea>
+			</div>
+
+			<button type="button" class="btn btn-primary" value="Add it" onclick="addIt();">Add it to the list</button>
+
+		</form>
+
+
+
+		<script>
+			function addIt() {
+    				var list = document.getElementById("theList");
+    				var newThing = document.createElement("li");
+    				if(document.getElementById("thing").value == "") {
+
+    				} else {
+	    				newThing.innerHTML = document.getElementById("thing").value;
+	    				list.appendChild(newThing);
+	    				document.getElementById("thing").value = "";
+    				}
+			}
+
+			function pick() {
+
+				var ul = document.getElementById("theList");
+				var liArray = ul.getElementsByTagName("li");
+
+				for (var i = 0; i < liArray.length; i++) {
+					liArray[i].style.color = "black";
+				}
+
+				if(liArray.length > 0) {
+					var picker = Math.floor((Math.random() * liArray.length));
+					console.log(picker);
+					liArray[picker].style.color = "red";
+				} else {
+					alert("add some stuff first");
+				}
+
+			}
+		</script>
+
+</div>
+</div>
+
+	</body>
+</html>

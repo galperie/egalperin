@@ -1,0 +1,14 @@
+div.container
+  div.row
+    h1 NEED HELP MAKING A DECISION? ME TOO
+    h3 What do you gotta do?
+    
+    ul#theList
+    
+    button(type="button" onclick="pick();").btn.btn-danger WHAT SHOULD I DO??? 
+    
+    form
+      div.form-group
+        textarea(rows="3" name="thing" placeholder="I gotta do this").form-control#thing
+        
+      button(type="button" value="Add it" onclick="addNewItemToList();").btn.btn-primary Add it to the list
